@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - DevMate</title>
+    <meta name="description" content="Share and access project resources, documentation, and learning materials.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">DevMate</a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span class="nav-icon">🔍</span>
+                            <span class="nav-text">Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span class="nav-icon">💡</span>
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-item-link">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-text">Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span class="nav-icon">💬</span>
+                            <span class="nav-text">Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span class="nav-icon">📱</span>
+                            <span class="nav-text">Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="resources.html" class="nav-item-link">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text">Resources</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="sidebar-profile">
+                <div class="profile-avatar-small">M</div>
+                <div class="profile-info-small">
+                    <div class="profile-name-small">Marthanda</div>
+                    <div class="profile-college-small">SRM Institute</div>
+                </div>
+            </div>
+            
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Header Bar -->
+            <header class="content-header">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search resources..." id="searchInput">
+                </div>
+                <div class="header-actions">
+                    <div class="notification-container">
+                        <button class="notification-bell" id="notificationBell">
+                            🔔
+                            <span class="notification-dot" id="notificationDot"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">Notifications</div>
+                            <div class="notification-item">
+                                <span class="notification-text">New message from Priya Sharma</span>
+                                <span class="notification-time">2 min ago</span>
+                            </div>
+                            <div class="notification-item">
+                                <span class="notification-text">Your team "AI Study Assistant" has an update</span>
+                                <span class="notification-time">5 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="profile.html" class="profile-avatar">M</a>
+                </div>
+            </header>
+
+            <!-- Resources Content -->
+            <div class="resources-content">
+                <div class="resources-header">
+                    <h1 class="page-title">Team Resources</h1>
+                    <p class="page-subtitle">Share and access project resources, documentation, and learning materials</p>
+                </div>
+
+                <!-- Team Selection -->
+                <div class="team-selection-section">
+                    <div class="team-selector">
+                        <label class="team-selector-label">Select Team:</label>
+                        <select class="team-selector-dropdown" id="teamSelector">
+                            <option value="">Choose a team to view resources</option>
+                            <option value="ai-study-assistant">AI-Powered Study Assistant</option>
+                            <option value="sustainable-campus">Sustainable Campus App</option>
+                            <option value="blockchain-voting">Blockchain Voting System</option>
+                            <option value="smart-home">Smart Home Automation</option>
+                            <option value="personal-finance">Personal Finance Tracker</option>
+                        </select>
+                        <button class="btn btn-primary" id="uploadBtn" onclick="openUploadModal()" disabled>
+                            📤 Upload Resource
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Resources Grid -->
+                <div class="resources-grid" id="resourcesGrid">
+                    <div class="resources-empty" id="resourcesEmpty">
+                        <div class="empty-icon" aria-hidden="true">📚</div>
+                        <p>Choose a team from the dropdown above to view and manage resources for that project.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content upload-modal-content">
+            <button class="modal-close" onclick="closeUploadModal()">×</button>
+            <div class="modal-body">
+                <h2 class="modal-title">Upload Resource</h2>
+                <form class="upload-form" id="uploadForm">
+                    <div class="form-group">
+                        <label class="form-label">Resource Title</label>
+                        <input type="text" class="form-input" id="resourceTitle" placeholder="Enter resource title" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-textarea" id="resourceDescription" placeholder="Describe the resource" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Resource Type</label>
+                        <select class="form-select" id="resourceType" required>
+                            <option value="">Select type</option>
+                            <option value="document">Document</option>
+                            <option value="code">Code/Repository</option>
+                            <option value="design">Design File</option>
+                            <option value="link">External Link</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">File or URL</label>
+                        <input type="file" class="form-input" id="resourceFile" accept=".pdf,.doc,.docx,.txt,.zip,.rar,.png,.jpg,.jpeg,.gif,.svg">
+                        <input type="url" class="form-input" id="resourceUrl" placeholder="Or enter URL" style="margin-top: 0.5rem;">
+                        <small class="form-help">Upload a file or provide a URL</small>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeUploadModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Upload Resource</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Sidebar is fixed open; collapse/expand removed across app
+
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notificationDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.classList.remove('show');
+            }
+        });
+
+        // Team selection functionality
+        const teamSelector = document.getElementById('teamSelector');
+        const uploadBtn = document.getElementById('uploadBtn');
+        const resourcesGrid = document.getElementById('resourcesGrid');
+        const resourcesEmpty = document.getElementById('resourcesEmpty');
+
+        // Sample resources data
+        const teamResources = {
+            'ai-study-assistant': [
+                {
+                    title: 'Project Requirements Document',
+                    description: 'Detailed requirements and specifications for the AI Study Assistant project',
+                    type: 'document',
+                    uploadedBy: 'Priya Sharma',
+                    uploadDate: '2024-01-15',
+                    fileType: 'PDF'
+                },
+                {
+                    title: 'Machine Learning Model Architecture',
+                    description: 'Technical documentation for the ML model design and implementation',
+                    type: 'document',
+                    uploadedBy: 'Arjun Patel',
+                    uploadDate: '2024-01-18',
+                    fileType: 'PDF'
+                },
+                {
+                    title: 'UI Mockups',
+                    description: 'User interface designs and wireframes for the application',
+                    type: 'design',
+                    uploadedBy: 'Ananya Reddy',
+                    uploadDate: '2024-01-20',
+                    fileType: 'Figma'
+                }
+            ],
+            'sustainable-campus': [
+                {
+                    title: 'Environmental Impact Research',
+                    description: 'Research data on campus environmental impact and sustainability metrics',
+                    type: 'document',
+                    uploadedBy: 'Kavya Nair',
+                    uploadDate: '2024-01-12',
+                    fileType: 'PDF'
+                },
+                {
+                    title: 'App Prototype',
+                    description: 'Interactive prototype of the sustainable campus application',
+                    type: 'design',
+                    uploadedBy: 'Rohit Kumar',
+                    uploadDate: '2024-01-16',
+                    fileType: 'Figma'
+                }
+            ],
+            'blockchain-voting': [
+                {
+                    title: 'Smart Contract Code',
+                    description: 'Solidity smart contracts for the voting system',
+                    type: 'code',
+                    uploadedBy: 'Rohit Kumar',
+                    uploadDate: '2024-01-14',
+                    fileType: 'SOL'
+                },
+                {
+                    title: 'Security Audit Report',
+                    description: 'Comprehensive security analysis of the blockchain voting system',
+                    type: 'document',
+                    uploadedBy: 'Vikram Singh',
+                    uploadDate: '2024-01-19',
+                    fileType: 'PDF'
+                }
+            ],
+            'smart-home': [
+                {
+                    title: 'IoT Sensor Documentation',
+                    description: 'Technical specifications and setup guide for IoT sensors',
+                    type: 'document',
+                    uploadedBy: 'Vikram Singh',
+                    uploadDate: '2024-01-13',
+                    fileType: 'PDF'
+                },
+                {
+                    title: 'Mobile App Wireframes',
+                    description: 'User interface designs for the smart home mobile application',
+                    type: 'design',
+                    uploadedBy: 'Priya Sharma',
+                    uploadDate: '2024-01-17',
+                    fileType: 'Adobe XD'
+                }
+            ],
+            'personal-finance': [
+                {
+                    title: 'Database Schema',
+                    description: 'Database design and schema for the finance tracking application',
+                    type: 'document',
+                    uploadedBy: 'Sneha Patel',
+                    uploadDate: '2024-01-11',
+                    fileType: 'PDF'
+                }
+            ]
+        };
+
+        teamSelector.addEventListener('change', (e) => {
+            const selectedTeam = e.target.value;
+            
+            if (selectedTeam) {
+                uploadBtn.disabled = false;
+                resourcesGrid.style.display = 'block';
+                loadTeamResources(selectedTeam);
+            } else {
+                uploadBtn.disabled = true;
+                resourcesGrid.style.display = 'none';
+                resourcesEmpty.innerHTML = '<p>Select a team to view and manage resources</p>';
+            }
+        });
+
+        function loadTeamResources(teamId) {
+            const resources = teamResources[teamId] || [];
+            
+            if (resources.length === 0) {
+                resourcesGrid.innerHTML = '<div class="resources-empty"><p>No resources uploaded yet. Be the first to share!</p></div>';
+                return;
+            }
+
+            resourcesGrid.innerHTML = resources.map(resource => `
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">${getResourceIcon(resource.type)}</div>
+                        <div class="resource-info">
+                            <h3 class="resource-title">${resource.title}</h3>
+                            <p class="resource-description">${resource.description}</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="resource-type">${resource.fileType}</span>
+                        <span class="resource-uploader">by ${resource.uploadedBy}</span>
+                        <span class="resource-date">${formatDate(resource.uploadDate)}</span>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="btn btn-sm btn-primary">Download</button>
+                        <button class="btn btn-sm btn-secondary">Share</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getResourceIcon(type) {
+            const icons = {
+                document: '📄',
+                code: '💻',
+                design: '🎨',
+                link: '🔗',
+                other: '📎'
+            };
+            return icons[type] || '📎';
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        // Upload modal functionality
+        function openUploadModal() {
+            const selectedTeam = teamSelector.value;
+            if (!selectedTeam) {
+                alert('Please select a team first');
+                return;
+            }
+            
+            document.getElementById('uploadModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            document.getElementById('uploadForm').reset();
+        }
+
+        // Handle form submission
+        document.getElementById('uploadForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const title = document.getElementById('resourceTitle').value;
+            const description = document.getElementById('resourceDescription').value;
+            const type = document.getElementById('resourceType').value;
+            const file = document.getElementById('resourceFile').files[0];
+            const url = document.getElementById('resourceUrl').value;
+            
+            if (!title || !type) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            if (!file && !url) {
+                alert('Please upload a file or provide a URL');
+                return;
+            }
+            
+            // Simulate upload success
+            alert('Resource uploaded successfully!');
+            closeUploadModal();
+            
+            // Refresh resources for selected team
+            const selectedTeam = teamSelector.value;
+            if (selectedTeam) {
+                loadTeamResources(selectedTeam);
+            }
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('uploadModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeUploadModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

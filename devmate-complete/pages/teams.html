@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams - DevMate</title>
+    <meta name="description" content="Manage your active and completed projects, and collaborate with your teams.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">DevMate</a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="discover.html" class="nav-item-link">
+                            <span class="nav-icon">🔍</span>
+                            <span class="nav-text">Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span class="nav-icon">💡</span>
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="teams.html" class="nav-item-link">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-text">Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span class="nav-icon">💬</span>
+                            <span class="nav-text">Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span class="nav-icon">📱</span>
+                            <span class="nav-text">Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text">Resources</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="sidebar-profile">
+                <div class="profile-avatar-small">M</div>
+                <div class="profile-info-small">
+                    <div class="profile-name-small">Marthanda</div>
+                    <div class="profile-college-small">SRM Institute</div>
+                </div>
+            </div>
+            
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Header Bar -->
+            <header class="content-header">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search teams, projects, or members..." id="searchInput">
+                </div>
+                <div class="header-actions">
+                    <div class="notification-container">
+                        <button class="notification-bell" id="notificationBell">
+                            🔔
+                            <span class="notification-dot" id="notificationDot"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">Notifications</div>
+                            <div class="notification-item">
+                                <span class="notification-text">New message from Priya Sharma</span>
+                                <span class="notification-time">2 min ago</span>
+                            </div>
+                            <div class="notification-item">
+                                <span class="notification-text">Your team "AI Study Assistant" has an update</span>
+                                <span class="notification-time">5 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="profile.html" class="profile-avatar">M</a>
+                </div>
+            </header>
+
+            <!-- Teams Content -->
+            <div class="teams-content">
+                <div class="teams-header">
+                    <h1 class="page-title">Your Teams</h1>
+                    <p class="page-subtitle">Manage your active projects and collaborate with your teammates.</p>
+                    <button class="btn btn-primary" style="margin-top: 10px;">+ Create New Team</button>
+                </div>
+
+                <!-- Teams List -->
+                <section class="teams-section">
+                    <h2 class="section-title">Active Projects</h2>
+                    <div class="teams-list-container">
+                        <div class="team-item glass-panel">
+                            <div class="team-info">
+                                <h3 class="team-name">AI-Powered Study Assistant</h3>
+                                <p class="team-lead">Team Lead: Priya Sharma</p>
+                                <div class="team-skills">
+                                    <span class="skill-tag">Machine Learning</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">TensorFlow</span>
+                                </div>
+                            </div>
+                            <div class="team-actions">
+                                <div class="team-members-avatars">
+                                    <div class="avatar">PS</div>
+                                    <div class="avatar">AP</div>
+                                    <div class="avatar">AR</div>
+                                </div>
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="team-item glass-panel">
+                            <div class="team-info">
+                                <h3 class="team-name">Sustainable Campus App</h3>
+                                <p class="team-lead">Team Lead: Arjun Patel</p>
+                                <div class="team-skills">
+                                    <span class="skill-tag">Flutter</span>
+                                    <span class="skill-tag">Firebase</span>
+                                </div>
+                            </div>
+                            <div class="team-actions">
+                                <div class="team-members-avatars">
+                                    <div class="avatar">AP</div>
+                                    <div class="avatar">AR</div>
+                                </div>
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="team-item glass-panel">
+                            <div class="team-info">
+                                <h3 class="team-name">Blockchain Voting System</h3>
+                                <p class="team-lead">Team Lead: Ananya Reddy</p>
+                                <div class="team-skills">
+                                    <span class="skill-tag">Blockchain</span>
+                                    <span class="skill-tag">Solidity</span>
+                                </div>
+                            </div>
+                            <div class="team-actions">
+                                <div class="team-members-avatars">
+                                    <div class="avatar">AR</div>
+                                    <div class="avatar">PS</div>
+                                </div>
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Completed Projects -->
+                <section class="teams-section">
+                    <h2 class="section-title">Completed Projects</h2>
+                    <div class="teams-list-container">
+                        <div class="team-item glass-panel">
+                            <div class="team-info">
+                                <h3 class="team-name">Automated Code Review Tool</h3>
+                                <p class="team-lead">Team Lead: Rohit Kumar</p>
+                                <div class="team-skills">
+                                    <span class="skill-tag">Static Analysis</span>
+                                    <span class="skill-tag">Python</span>
+                                </div>
+                            </div>
+                            <div class="team-actions">
+                                <div class="team-members-avatars">
+                                    <div class="avatar">RK</div>
+                                    <div class="avatar">PS</div>
+                                </div>
+                                <button class="btn btn-secondary">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Sidebar is fixed open; collapse/expand removed across app
+
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notificationDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.classList.remove('show');
+            }
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const teamItems = document.querySelectorAll('.team-item');
+
+        function filterTeams() {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            teamItems.forEach(item => {
+                const teamName = item.querySelector('.team-name').textContent.toLowerCase();
+                const teamLead = item.querySelector('.team-lead').textContent.toLowerCase();
+                const teamSkills = Array.from(item.querySelectorAll('.skill-tag'))
+                    .map(skill => skill.textContent.toLowerCase())
+                    .join(' ');
+                
+                const matchesSearch = teamName.includes(searchTerm) || 
+                                    teamLead.includes(searchTerm) || 
+                                    teamSkills.includes(searchTerm);
+                
+                if (matchesSearch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterTeams);
+    </script>
+</body>
+</html>
+
+

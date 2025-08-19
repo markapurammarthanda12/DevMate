@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover People - DevMate</title>
+    <meta name="description" content="Discover talented developers from your college and beyond. Connect with like-minded students for your next project.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-logo">DevMate</a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-item-link">
+                            <span class="nav-icon">🏠</span>
+                            <span class="nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="discover.html" class="nav-item-link">
+                            <span class="nav-icon">🔍</span>
+                            <span class="nav-text">Discover</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="projects.html" class="nav-item-link">
+                            <span class="nav-icon">💡</span>
+                            <span class="nav-text">Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-item-link">
+                            <span class="nav-icon">👥</span>
+                            <span class="nav-text">Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="team-chat.html" class="nav-item-link">
+                            <span class="nav-icon">💬</span>
+                            <span class="nav-text">Team Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal-chat.html" class="nav-item-link">
+                            <span class="nav-icon">📱</span>
+                            <span class="nav-text">Personal Chat</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-item-link">
+                            <span class="nav-icon">📅</span>
+                            <span class="nav-text">Events</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-item-link">
+                            <span class="nav-icon">📚</span>
+                            <span class="nav-text">Resources</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- User Profile Card -->
+            <div class="sidebar-profile">
+                <div class="profile-avatar-small">M</div>
+                <div class="profile-info-small">
+                    <div class="profile-name-small">Marthanda</div>
+                    <div class="profile-college-small">SRM Institute</div>
+                </div>
+            </div>
+            
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <!-- Header Bar -->
+            <header class="content-header">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search by name, college, or skills..." id="searchInput">
+                </div>
+                <div class="header-actions">
+                    <div class="notification-container">
+                        <button class="notification-bell" id="notificationBell">
+                            🔔
+                            <span class="notification-dot" id="notificationDot"></span>
+                        </button>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">Notifications</div>
+                            <div class="notification-item">
+                                <span class="notification-text">New message from Priya Sharma</span>
+                                <span class="notification-time">2 min ago</span>
+                            </div>
+                            <div class="notification-item">
+                                <span class="notification-text">Your team "AI Study Assistant" has an update</span>
+                                <span class="notification-time">5 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="profile.html" class="profile-avatar">M</a>
+                </div>
+            </header>
+
+            <!-- Discover Content -->
+            <div class="discover-content">
+                <div class="discover-header">
+                    <h1 class="page-title">Discover People</h1>
+                    <p class="page-subtitle">Connect with talented developers from your college and beyond</p>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-group">
+                        <label class="filter-label">College</label>
+                        <select class="filter-select" id="collegeFilter">
+                            <option value="">All Colleges</option>
+                            <option value="SRM Institute">SRM Institute</option>
+                            <option value="IIT Madras">IIT Madras</option>
+                            <option value="NIT Trichy">NIT Trichy</option>
+                            <option value="Anna University">Anna University</option>
+                            <option value="VIT">VIT</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Skills</label>
+                        <select class="filter-select" id="skillsFilter">
+                            <option value="">All Skills</option>
+                            <option value="Machine Learning">Machine Learning</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Blockchain">Blockchain</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Year</label>
+                        <select class="filter-select" id="yearFilter">
+                            <option value="">All Years</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- People Grid -->
+                <div class="people-grid" id="peopleGrid">
+                    <!-- Profile Card 1 -->
+                    <div class="profile-card" data-college="SRM Institute" data-skills="Machine Learning,Python,TensorFlow" data-year="3rd Year">
+                        <div class="profile-card-avatar">P</div>
+                        <h3 class="profile-card-name">Priya Sharma</h3>
+                        <p class="profile-card-college">SRM Institute</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">Machine Learning</span>
+                            <span class="skill-tag-small">Python</span>
+                            <span class="skill-tag-small">TensorFlow</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('priya-sharma')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('priya-sharma')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 2 -->
+                    <div class="profile-card" data-college="IIT Madras" data-skills="Web Development,React,Node.js" data-year="4th Year">
+                        <div class="profile-card-avatar">A</div>
+                        <h3 class="profile-card-name">Arjun Patel</h3>
+                        <p class="profile-card-college">IIT Madras</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">Web Development</span>
+                            <span class="skill-tag-small">React</span>
+                            <span class="skill-tag-small">Node.js</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('arjun-patel')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('arjun-patel')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 3 -->
+                    <div class="profile-card" data-college="NIT Trichy" data-skills="UI/UX Design,Figma,Adobe XD" data-year="2nd Year">
+                        <div class="profile-card-avatar">An</div>
+                        <h3 class="profile-card-name">Ananya Reddy</h3>
+                        <p class="profile-card-college">NIT Trichy</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">UI/UX Design</span>
+                            <span class="skill-tag-small">Figma</span>
+                            <span class="skill-tag-small">Adobe XD</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('ananya-reddy')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('ananya-reddy')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 4 -->
+                    <div class="profile-card" data-college="Anna University" data-skills="Mobile Development,Flutter,Dart" data-year="3rd Year">
+                        <div class="profile-card-avatar">K</div>
+                        <h3 class="profile-card-name">Kavya Nair</h3>
+                        <p class="profile-card-college">Anna University</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">Mobile Development</span>
+                            <span class="skill-tag-small">Flutter</span>
+                            <span class="skill-tag-small">Dart</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('kavya-nair')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('kavya-nair')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 5 -->
+                    <div class="profile-card" data-college="VIT" data-skills="Blockchain,Solidity,Web3" data-year="4th Year">
+                        <div class="profile-card-avatar">R</div>
+                        <h3 class="profile-card-name">Rohit Kumar</h3>
+                        <p class="profile-card-college">VIT</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">Blockchain</span>
+                            <span class="skill-tag-small">Solidity</span>
+                            <span class="skill-tag-small">Web3</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('rohit-kumar')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('rohit-kumar')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 6 -->
+                    <div class="profile-card" data-college="SRM Institute" data-skills="Data Science,Python,Pandas" data-year="2nd Year">
+                        <div class="profile-card-avatar">S</div>
+                        <h3 class="profile-card-name">Sneha Patel</h3>
+                        <p class="profile-card-college">SRM Institute</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">Data Science</span>
+                            <span class="skill-tag-small">Python</span>
+                            <span class="skill-tag-small">Pandas</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('sneha-patel')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('sneha-patel')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 7 -->
+                    <div class="profile-card" data-college="IIT Madras" data-skills="DevOps,Docker,Kubernetes" data-year="4th Year">
+                        <div class="profile-card-avatar">V</div>
+                        <h3 class="profile-card-name">Vikram Singh</h3>
+                        <p class="profile-card-college">IIT Madras</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">DevOps</span>
+                            <span class="skill-tag-small">Docker</span>
+                            <span class="skill-tag-small">Kubernetes</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('vikram-singh')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('vikram-singh')">Message</button>
+                        </div>
+                    </div>
+
+                    <!-- Profile Card 8 -->
+                    <div class="profile-card" data-college="Anna University" data-skills="Game Development,Unity,C#" data-year="3rd Year">
+                        <div class="profile-card-avatar">N</div>
+                        <h3 class="profile-card-name">Neha Gupta</h3>
+                        <p class="profile-card-college">Anna University</p>
+                        <div class="profile-card-skills">
+                            <span class="skill-tag-small">Game Development</span>
+                            <span class="skill-tag-small">Unity</span>
+                            <span class="skill-tag-small">C#</span>
+                        </div>
+                        <div class="profile-card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="openProfileModal('neha-gupta')">View Profile</button>
+                            <button class="btn btn-secondary btn-sm" onclick="openMessage('neha-gupta')">Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="modal-content profile-modal-content">
+            <button class="modal-close" onclick="closeProfileModal()">×</button>
+            <div class="modal-body" id="profileModalBody">
+                <!-- Profile details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script>
+        // Sidebar is fixed open; collapse/expand removed across app
+
+        // Notification dropdown functionality
+        const notificationBell = document.getElementById('notificationBell');
+        const notificationDropdown = document.getElementById('notificationDropdown');
+        
+        notificationBell.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notificationDropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!notificationBell.contains(e.target) && !notificationDropdown.contains(e.target)) {
+                notificationDropdown.classList.remove('show');
+            }
+        });
+
+        // Profile data
+        const profileData = {
+            'priya-sharma': {
+                name: 'Priya Sharma',
+                title: 'ML Engineering Student | 3rd Year BTech CSE',
+                college: 'SRM Institute of Science and Technology',
+                email: 'priya.sharma@gmail.com',
+                linkedin: 'linkedin.com/in/priya-sharma',
+                github: 'github.com/priya-sharma',
+                about: 'Passionate machine learning enthusiast with a strong foundation in Python and deep learning frameworks. I love working on AI projects that can make a real-world impact. Currently focusing on computer vision and natural language processing applications.',
+                skills: {
+                    'Programming Languages': ['Python', 'R', 'Java', 'SQL'],
+                    'ML/AI Frameworks': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'Keras'],
+                    'Data Science': ['Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
+                    'Tools': ['Jupyter', 'Git', 'Docker', 'AWS']
+                },
+                interests: ['Machine Learning', 'Computer Vision', 'NLP', 'Research', 'Hackathons'],
+                projects: [
+                    { name: 'Image Classification System', status: 'Active', tech: ['Python', 'TensorFlow', 'OpenCV'] },
+                    { name: 'Sentiment Analysis Tool', status: 'Completed', tech: ['Python', 'NLTK', 'Flask'] }
+                ]
+            },
+            'arjun-patel': {
+                name: 'Arjun Patel',
+                title: 'Full Stack Developer | 4th Year BTech CSE',
+                college: 'IIT Madras',
+                email: 'arjun.patel@gmail.com',
+                linkedin: 'linkedin.com/in/arjun-patel',
+                github: 'github.com/arjun-patel',
+                about: 'Full-stack developer with expertise in modern web technologies. I enjoy building scalable applications and have experience with both frontend and backend development. Always eager to learn new technologies and contribute to open-source projects.',
+                skills: {
+                    'Frontend': ['React', 'Vue.js', 'HTML', 'CSS', 'JavaScript'],
+                    'Backend': ['Node.js', 'Express', 'Python', 'Django'],
+                    'Database': ['MongoDB', 'PostgreSQL', 'Redis'],
+                    'Tools': ['Git', 'Docker', 'AWS', 'Webpack']
+                },
+                interests: ['Web Development', 'Open Source', 'System Design', 'DevOps'],
+                projects: [
+                    { name: 'E-commerce Platform', status: 'Active', tech: ['React', 'Node.js', 'MongoDB'] },
+                    { name: 'Task Management App', status: 'Completed', tech: ['Vue.js', 'Express', 'PostgreSQL'] }
+                ]
+            },
+            'ananya-reddy': {
+                name: 'Ananya Reddy',
+                title: 'UI/UX Designer | 2nd Year BTech CSE',
+                college: 'NIT Trichy',
+                email: 'ananya.reddy@gmail.com',
+                linkedin: 'linkedin.com/in/ananya-reddy',
+                github: 'github.com/ananya-reddy',
+                about: 'Creative UI/UX designer passionate about creating intuitive and beautiful user experiences. I believe in user-centered design and enjoy conducting user research to inform design decisions. Always looking for opportunities to collaborate on innovative projects.',
+                skills: {
+                    'Design Tools': ['Figma', 'Adobe XD', 'Sketch', 'Photoshop'],
+                    'Prototyping': ['InVision', 'Principle', 'Framer'],
+                    'Frontend': ['HTML', 'CSS', 'JavaScript', 'React'],
+                    'Research': ['User Testing', 'Wireframing', 'Information Architecture']
+                },
+                interests: ['UI/UX Design', 'User Research', 'Design Systems', 'Accessibility'],
+                projects: [
+                    { name: 'Mobile Banking App Design', status: 'Active', tech: ['Figma', 'Principle'] },
+                    { name: 'E-learning Platform UI', status: 'Completed', tech: ['Adobe XD', 'React'] }
+                ]
+            },
+            'kavya-nair': {
+                name: 'Kavya Nair',
+                title: 'Mobile App Developer | 3rd Year BTech CSE',
+                college: 'Anna University',
+                email: 'kavya.nair@gmail.com',
+                linkedin: 'linkedin.com/in/kavya-nair',
+                github: 'github.com/kavya-nair',
+                about: 'Mobile application developer specializing in cross-platform development with Flutter. I love creating smooth, performant mobile experiences and have a keen interest in mobile UI/UX design. Currently exploring AR/VR applications in mobile development.',
+                skills: {
+                    'Mobile Development': ['Flutter', 'Dart', 'React Native', 'Swift'],
+                    'Backend': ['Firebase', 'Node.js', 'REST APIs'],
+                    'Database': ['SQLite', 'Firestore', 'MongoDB'],
+                    'Tools': ['Android Studio', 'Xcode', 'Git', 'Figma']
+                },
+                interests: ['Mobile Development', 'Cross-platform Apps', 'AR/VR', 'Mobile UI/UX'],
+                projects: [
+                    { name: 'Fitness Tracking App', status: 'Active', tech: ['Flutter', 'Firebase'] },
+                    { name: 'Recipe Sharing Platform', status: 'Completed', tech: ['React Native', 'Node.js'] }
+                ]
+            },
+            'rohit-kumar': {
+                name: 'Rohit Kumar',
+                title: 'Blockchain Developer | 4th Year BTech CSE',
+                college: 'VIT',
+                email: 'rohit.kumar@gmail.com',
+                linkedin: 'linkedin.com/in/rohit-kumar',
+                github: 'github.com/rohit-kumar',
+                about: 'Blockchain developer with expertise in smart contract development and DeFi applications. I am passionate about decentralized technologies and their potential to revolutionize various industries. Currently working on NFT marketplaces and DeFi protocols.',
+                skills: {
+                    'Blockchain': ['Solidity', 'Web3.js', 'Ethereum', 'Hyperledger'],
+                    'Programming': ['JavaScript', 'Python', 'Go', 'Rust'],
+                    'Tools': ['Truffle', 'Hardhat', 'MetaMask', 'IPFS'],
+                    'Frontend': ['React', 'Next.js', 'HTML', 'CSS']
+                },
+                interests: ['Blockchain', 'DeFi', 'Smart Contracts', 'Cryptocurrency', 'NFTs'],
+                projects: [
+                    { name: 'NFT Marketplace', status: 'Active', tech: ['Solidity', 'React', 'Web3.js'] },
+                    { name: 'Voting DApp', status: 'Completed', tech: ['Ethereum', 'Truffle', 'React'] }
+                ]
+            },
+            'sneha-patel': {
+                name: 'Sneha Patel',
+                title: 'Data Science Student | 2nd Year BTech CSE',
+                college: 'SRM Institute of Science and Technology',
+                email: 'sneha.patel@gmail.com',
+                linkedin: 'linkedin.com/in/sneha-patel',
+                github: 'github.com/sneha-patel',
+                about: 'Data science enthusiast with a passion for extracting insights from complex datasets. I enjoy working with statistical models and machine learning algorithms to solve real-world problems. Currently focusing on predictive analytics and data visualization.',
+                skills: {
+                    'Programming': ['Python', 'R', 'SQL', 'Java'],
+                    'Data Science': ['Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib'],
+                    'Visualization': ['Tableau', 'Power BI', 'Seaborn', 'Plotly'],
+                    'Tools': ['Jupyter', 'Git', 'Excel', 'SPSS']
+                },
+                interests: ['Data Science', 'Machine Learning', 'Statistics', 'Data Visualization'],
+                projects: [
+                    { name: 'Sales Prediction Model', status: 'Active', tech: ['Python', 'Scikit-learn', 'Pandas'] },
+                    { name: 'Customer Segmentation Analysis', status: 'Completed', tech: ['R', 'Tableau'] }
+                ]
+            },
+            'vikram-singh': {
+                name: 'Vikram Singh',
+                title: 'DevOps Engineer | 4th Year BTech CSE',
+                college: 'IIT Madras',
+                email: 'vikram.singh@gmail.com',
+                linkedin: 'linkedin.com/in/vikram-singh',
+                github: 'github.com/vikram-singh',
+                about: 'DevOps engineer passionate about automation, containerization, and cloud infrastructure. I enjoy building CI/CD pipelines and optimizing deployment processes. Currently exploring microservices architecture and serverless computing.',
+                skills: {
+                    'DevOps': ['Docker', 'Kubernetes', 'Jenkins', 'Ansible'],
+                    'Cloud': ['AWS', 'Azure', 'GCP', 'Terraform'],
+                    'Programming': ['Python', 'Bash', 'Go', 'JavaScript'],
+                    'Monitoring': ['Prometheus', 'Grafana', 'ELK Stack']
+                },
+                interests: ['DevOps', 'Cloud Computing', 'Automation', 'Microservices'],
+                projects: [
+                    { name: 'CI/CD Pipeline Automation', status: 'Active', tech: ['Jenkins', 'Docker', 'AWS'] },
+                    { name: 'Microservices Deployment', status: 'Completed', tech: ['Kubernetes', 'Docker', 'Terraform'] }
+                ]
+            },
+            'neha-gupta': {
+                name: 'Neha Gupta',
+                title: 'Game Developer | 3rd Year BTech CSE',
+                college: 'Anna University',
+                email: 'neha.gupta@gmail.com',
+                linkedin: 'linkedin.com/in/neha-gupta',
+                github: 'github.com/neha-gupta',
+                about: 'Game developer with a passion for creating immersive gaming experiences. I specialize in Unity development and have experience with both 2D and 3D game development. Currently exploring VR/AR game development and procedural generation techniques.',
+                skills: {
+                    'Game Development': ['Unity', 'Unreal Engine', 'C#', 'C++'],
+                    'Graphics': ['Blender', 'Maya', 'Photoshop', 'Substance Painter'],
+                    'Programming': ['C#', 'C++', 'Python', 'JavaScript'],
+                    'Tools': ['Git', 'Perforce', 'JIRA', 'Visual Studio']
+                },
+                interests: ['Game Development', 'VR/AR', '3D Modeling', 'Game Design'],
+                projects: [
+                    { name: '2D Platformer Game', status: 'Active', tech: ['Unity', 'C#'] },
+                    { name: 'VR Puzzle Game', status: 'Completed', tech: ['Unity', 'Oculus SDK', 'C#'] }
+                ]
+            }
+        };
+
+        // Filter functionality
+        const searchInput = document.getElementById('searchInput');
+        const collegeFilter = document.getElementById('collegeFilter');
+        const skillsFilter = document.getElementById('skillsFilter');
+        const yearFilter = document.getElementById('yearFilter');
+        const peopleGrid = document.getElementById('peopleGrid');
+
+        function filterProfiles() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedCollege = collegeFilter.value;
+            const selectedSkill = skillsFilter.value;
+            const selectedYear = yearFilter.value;
+
+            const profileCards = peopleGrid.querySelectorAll('.profile-card');
+
+            profileCards.forEach(card => {
+                const name = card.querySelector('.profile-card-name').textContent.toLowerCase();
+                const college = card.dataset.college;
+                const skills = card.dataset.skills.toLowerCase();
+                const year = card.dataset.year;
+
+                const matchesSearch = name.includes(searchTerm) || college.toLowerCase().includes(searchTerm) || skills.includes(searchTerm);
+                const matchesCollege = !selectedCollege || college === selectedCollege;
+                const matchesSkill = !selectedSkill || skills.includes(selectedSkill.toLowerCase());
+                const matchesYear = !selectedYear || year === selectedYear;
+
+                if (matchesSearch && matchesCollege && matchesSkill && matchesYear) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterProfiles);
+        collegeFilter.addEventListener('change', filterProfiles);
+        skillsFilter.addEventListener('change', filterProfiles);
+        yearFilter.addEventListener('change', filterProfiles);
+
+        // Profile modal functionality
+        function openProfileModal(profileId) {
+            const profile = profileData[profileId];
+            if (!profile) return;
+
+            const modalBody = document.getElementById('profileModalBody');
+            modalBody.innerHTML = `
+                <div class="profile-modal-header">
+                    <div class="profile-modal-avatar">${profile.name.charAt(0)}</div>
+                    <div class="profile-modal-info">
+                        <h2 class="profile-modal-name">${profile.name}</h2>
+                        <p class="profile-modal-title">${profile.title}</p>
+                        <p class="profile-modal-college">📍 ${profile.college}</p>
+                        <div class="profile-modal-links">
+                            <a href="mailto:${profile.email}" class="profile-modal-link">📧 ${profile.email}</a>
+                            <a href="https://${profile.linkedin}" class="profile-modal-link" target="_blank">💼 ${profile.linkedin}</a>
+                            <a href="https://${profile.github}" class="profile-modal-link" target="_blank">💻 ${profile.github}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-modal-section">
+                    <h3>About Me</h3>
+                    <p>${profile.about}</p>
+                </div>
+
+                <div class="profile-modal-section">
+                    <h3>Technical Skills</h3>
+                    ${Object.entries(profile.skills).map(([category, skills]) => `
+                        <div class="skills-category-modal">
+                            <h4>${category}</h4>
+                            <div class="skills-list-modal">
+                                ${skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+
+                <div class="profile-modal-section">
+                    <h3>Interests</h3>
+                    <div class="interests-list-modal">
+                        ${profile.interests.map(interest => `<span class="interest-tag-modal">${interest}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div class="profile-modal-section">
+                    <h3>Recent Projects</h3>
+                    <div class="projects-list-modal">
+                        ${profile.projects.map(project => `
+                            <div class="project-item-modal">
+                                <div class="project-header-modal">
+                                    <h4>${project.name}</h4>
+                                    <span class="project-status-modal ${project.status.toLowerCase()}">${project.status}</span>
+                                </div>
+                                <div class="project-tech-modal">
+                                    ${project.tech.map(tech => `<span class="tech-tag-modal">${tech}</span>`).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="profile-modal-actions">
+                    <button class="btn btn-primary" onclick="openMessage('${profileId}')">Send Message</button>
+                    <button class="btn btn-secondary" onclick="closeProfileModal()">Close</button>
+                </div>
+            `;
+
+            document.getElementById('profileModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProfileModal() {
+            document.getElementById('profileModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openMessage(profileId) {
+            // Redirect to personal chat page
+            window.location.href = 'personal-chat.html';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('profileModal').addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeProfileModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
